@@ -11,3 +11,12 @@ This drawing was made from a 6 year old girl at the CoderDojo cologne...
 
 There is a stand alone app to play with without need of installing all stuff.
 With "ellipse 50 50 80 80" or "rect/line/fill" you can draw and with mouse dragging change the values.
+
+
+Notice
+===============
+
+Start Ruby-Processing with "rp5 watch simple_live_coding.rb". This reloads "simple_live_coding.rb" after safing and you can implement your ideas in this file
+without need to restart. After implementation of the new feature just copy your code in a seperate file in the "main" directory and do "require_relative" for the file.
+
+This is live coding a live coding app...
