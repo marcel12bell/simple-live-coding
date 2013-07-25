@@ -2,7 +2,14 @@ require 'ruby-processing'
 
 class RubyDraw < Processing::App
 
-load_library 'string_object', 'lines', 'cursor', 'parse', 'description_list', 'editor', 'canvas', 'watch'
+require_relative 'main/string_object'
+require_relative 'main/lines'
+require_relative 'main/cursor'
+require_relative 'main/parse'
+require_relative 'main/description_list'
+require_relative 'main/editor'
+require_relative 'main/canvas'
+require_relative 'main/watch'
 
   def setup
     $width = 700
@@ -40,9 +47,9 @@ load_library 'string_object', 'lines', 'cursor', 'parse', 'description_list', 'e
     text "this is a DEMO app", $width/2, $height-40
     text "write 'rect 20 20 200 200' and drag the values...", $width/2, $height-20
 
-    fill color(14, 13, 0)
+    fill color 14, 13, 0
     @cursor.draw_line
-    fill color(104, 153, 0)
+    fill color 104, 153, 0
 
     if mouse_pressed?
       loop
