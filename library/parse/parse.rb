@@ -7,6 +7,8 @@ class Parse
 
   def update_line(key, key_code)
     case key_code
+      when 16
+        #do nothing because shift was pressed
       when 10 #after return ad a new line
         #check cursor for new line position
         @lines.new_or_next_line(@cursor)
