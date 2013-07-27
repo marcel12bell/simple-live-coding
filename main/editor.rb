@@ -17,7 +17,7 @@ class Editor
     @lines.elements.each do |e|
         e.each_pair do |key, string_object| 
             eval("text '#{string_object.content}',
-                         #{$width/2},
+                         #{$app.width/2},
                          #{string_object.get_position.to_a.last}")
         end
     end
@@ -25,8 +25,8 @@ class Editor
 
   def draw_explanation
       return eval("text '#{@description.explanation}', 
-                         #{$width-@description.explanation_length-$editor_right_margin}, 
-                         #{@description.position+$editor_top_margin}")
+                         #{$app.width-@description.explanation_length-$app.editor_right_margin}, 
+                         #{@description.position+$app.editor_top_margin}")
 
   end
 end

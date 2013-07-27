@@ -2,8 +2,8 @@ class Lines
 
   def initialize
     @elements = []
-    @line_height = $line_height
-    @line_space = $line_space
+    @line_height = $app.line_height
+    @line_space = $app.line_space
     @positiontable = Hash.new {|this_hash,missing_key| 
       found_key = this_hash.keys.find { |this_key| 
             this_key.class == Range && this_key.include?(missing_key) }
@@ -25,7 +25,7 @@ class Lines
     #get the linge and extract x, y param
     line_range = @positiontable[y].get_position
     y = line_range.to_a.last
-    return $start_of_editor_text, y
+    [$app.start_of_editor_text, y]
   end
 
   def new_or_next_line(cursor)

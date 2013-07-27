@@ -6,7 +6,7 @@ class Watch
   end
 
   def check_line(x, y)
-    if x > ($width/2) + $editor_left_margin
+    if x > ($app.width/2) + $app.editor_left_margin
       if @lines.positiontable(y) == :undefined
         @description.position = [-50] # set it outside the view field
       else
@@ -19,7 +19,7 @@ class Watch
   def check_param(x,y)
     y_position = @cursor.y_position
     string_object = @lines.positiontable(y_position)
-    if (string_object.position[0]).include?($pressed[1])
+    if (string_object.position[0]).include?($app.pressed[1])
       string_object.update_argument(x,y) unless string_object == :undefined
     end
   end

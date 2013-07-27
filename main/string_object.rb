@@ -32,9 +32,9 @@ class StringObject
 
   def update_argument(x_mouse, y_mouse)
     update_argument_position
-    arg = find_argument($pressed[0])
+    arg = find_argument($app.pressed[0])
     if arg
-      new_arg_value = -$width/2+x_mouse+$editor_left_margin-length((methode+ " ").to_s)-length(@object_list[1][0..arg].join(" ").to_s)+$initial_arg_value
+      new_arg_value = -$app.width/2+x_mouse+$app.editor_left_margin-length((methode+ " ").to_s)-length(@object_list[1][0..arg].join(" ").to_s)+$app.initial_arg_value
       @object_list[1][arg] = new_arg_value
       @content = @object_list.first + " " + @object_list[1].join(" ") + "\n" if @object_list.first
     end
@@ -67,7 +67,7 @@ class StringObject
     end
 
     def update_argument_position
-      start_position = $width/2+$editor_left_margin+length((methode).to_s)
+      start_position = $app.width/2+$app.editor_left_margin+length((methode).to_s)
       arg_length_new = 0
       space = length(" ")
       @argument_position = Hash.new {|this_hash,missing_key| #set always a new hash to keep track of growing numbers

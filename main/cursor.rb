@@ -3,7 +3,8 @@ include Processing::Proxy
 
   def initialize(line)
     @line = line
-    @x, @y = $start_of_editor_text, $editor_top_margin
+    @x = $app.start_of_editor_text
+    @y = $app.editor_top_margin
   end
 
   def set_position(x,y) #on mouse down
@@ -13,11 +14,11 @@ include Processing::Proxy
   end
 
   def get_position
-    return @x, @y
+    [@x, @y]
   end
 
   def y_position
-    return @y
+    @y
   end
 
   def draw_line
@@ -29,7 +30,7 @@ include Processing::Proxy
   end
 
   def go_to_new_line #after tap enter button
-    @y += $line_height+$line_space
+    @y += $app.line_height+$app.line_space
   end
 
   private

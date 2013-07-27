@@ -19,7 +19,7 @@ include Processing::Proxy
 
   def send_if_runnable(methode, args)
     begin
-      send(methode.to_s, *args)
+      send(methode, *args)
     rescue Exception => e
       puts "#{ e } (#{ e.class })!"
     end
