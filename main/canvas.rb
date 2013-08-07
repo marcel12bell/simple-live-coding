@@ -7,10 +7,8 @@ include Processing::Proxy
 
   def draw_canvas
     elements = @lines.elements
-    elements.each do |e|
-      e.each_pair{|key, line| 
-        send_if_runnable(line.methode, line.arguments) if line.methode
-      }
+    elements.each do |str_obj|
+        send_if_runnable(str_obj.methode, str_obj.arguments) if str_obj.methode
     end
   end
 

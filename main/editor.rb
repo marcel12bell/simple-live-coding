@@ -14,12 +14,10 @@ class Editor
   end
 
   def draw_text
-    @lines.elements.each do |e|
-        e.each_pair do |key, string_object| 
-            eval("text '#{string_object.content}',
+    @lines.elements.each do |str_obj|
+            eval("text '#{str_obj.content}',
                          #{$app.width/2},
-                         #{string_object.get_position.to_a.last}")
-        end
+                         #{str_obj.get_position.to_a.last}")
     end
   end
 

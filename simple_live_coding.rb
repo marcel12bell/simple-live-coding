@@ -35,7 +35,7 @@ class RubyDraw < Processing::App
     #frameRate 25
 
     #initial drawing for testing:
-    "rect 20 30 30 40".chars.each{ |c| @parser.update_line(c, 0) }
+    #"rect 20 30 30 40".chars.each{ |c| @parser.update_line(c, 0) }
   end
   
   def draw
@@ -55,7 +55,7 @@ class RubyDraw < Processing::App
     fill color 104, 153, 0
 
     if mouse_pressed?
-      sleep(0.2) #needed because of unintented param change line selection 
+      sleep(0.12) #needed because of unintented param change line selection 
       loop
       @watcher.check_param(mouse_x, mouse_y)
     else

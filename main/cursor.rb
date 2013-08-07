@@ -33,6 +33,10 @@ include Processing::Proxy
     @y += $app.line_height+$app.line_space
   end
 
+  def go_to_previous_line
+    @y -= $app.line_height+$app.line_space
+  end
+
   private
   def editor_line
     #return true, if the is a line to edit on
