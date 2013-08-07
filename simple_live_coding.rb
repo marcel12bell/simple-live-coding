@@ -33,6 +33,9 @@ class RubyDraw < Processing::App
     no_loop
     #smooth
     #frameRate 25
+
+    #initial drawing for testing:
+    "rect 20 30 30 40".chars.each{ |c| @parser.update_line(c, 0) }
   end
   
   def draw
