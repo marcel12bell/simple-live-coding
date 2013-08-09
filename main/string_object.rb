@@ -27,7 +27,11 @@ class StringObject
   def arguments
     array = @content.split.to_a
     #splits the string after the methode into arguments array
-    (array.count > 2) ? array.map{ |e| e.to_i}[1..-1] : []
+    if (array.count > 2) 
+      update(array)
+    else
+      []
+    end
   end
 
   def update_argument(x_mouse, y_mouse)
@@ -36,7 +40,7 @@ class StringObject
     if arg
       new_arg_value = -$app.width/2+x_mouse+$app.editor_left_margin-length((methode+ " ").to_s)-length(@object_list[1][0..arg].join(" ").to_s)+$app.initial_arg_value
       @object_list[1][arg] = new_arg_value
-      @content = @object_list.first + " " + @object_list[1].join(" ") + "\n" if @object_list.first
+      @content = @object_list.first + " " + @object_list[1].join(", ") + "\n" if @object_list.first
     end
   end
 
@@ -61,6 +65,17 @@ class StringObject
   end
 
   private
+
+    def update(array)
+      a = array.map do |e|
+        if /[[:alpha:]]/.match(e)
+          e
+        else
+          e.to_i
+        end
+      end
+      a[1..-1]
+    end
 
     def length(s)
       text_width(s.to_s).to_i unless s.nil?

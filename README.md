@@ -10,7 +10,7 @@ Get inspired by [Bret Victor](http://worrydream.com/#!/LearnableProgramming) or 
 This drawing was made from a 6 year old girl at the CoderDojo cologne...
 
 There is a stand alone app to play with without need of installing all stuff.
-With "ellipse 50 50 80 80" or "rect/line/fill" you can draw and with mouse dragging change the values.
+With "ellipse 50, 50, 80, 80" or "rect/line/fill" you can draw and with mouse dragging change the values.
 
 
 Notice

@@ -46,9 +46,8 @@ class RubyDraw < Processing::App
     fill color 104, 153, 0
     @editor.draw_content
 
-
     text "this is a DEMO app", $app.width/2, $app.height-40
-    text "write 'rect 20 20 200 200' and drag the values...", $app.width/2, $app.height-20
+    text "write 'rect 20, 20, 200, 200' and drag the values...", $app.width/2, $app.height-20
 
     fill color 14, 13, 0
     @cursor.draw_line #we need a line marking the text position
@@ -74,7 +73,6 @@ class RubyDraw < Processing::App
     @watcher.check_line(mouse_x, mouse_y) #explanation feature
     redraw
   end
-
 
   def mouse_pressed
     @pressed = [mouse_x, mouse_y]
