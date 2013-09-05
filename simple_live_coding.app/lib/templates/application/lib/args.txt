@@ -1,3 +1,0 @@
-
-org.jruby.Main lib/ruby-processing/runners/run.rb lib/simple_live_coding.rb
-core/jruby-complete.jar

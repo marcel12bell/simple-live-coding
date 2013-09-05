@@ -11,7 +11,7 @@ class RubyDraw < Processing::App
   require_relative 'main/canvas'
   require_relative 'main/watch'
 
-  attr_reader :editor_left_margin, :editor_right_margin, :editor_top_margin, :start_of_editor_text, :line_height, :line_space, :pressed, :initial_arg_value
+  attr_reader :editor_left_margin, :editor_right_margin, :editor_top_margin, :start_of_editor_text, :line_height, :line_space, :pressed, :initial_param
 
   def setup
     size 700, 600 # access with $app.width
@@ -35,7 +35,7 @@ class RubyDraw < Processing::App
     #frameRate 25
 
     #initial drawing for testing:
-    #"rect 20 30 30 40".chars.each{ |c| @parser.update_line(c, 0) }
+    "rect 20, 30, 30, 40".chars.each{ |c| @parser.update_line(c, 0) }
   end
   
   def draw
@@ -46,6 +46,7 @@ class RubyDraw < Processing::App
     fill color 104, 153, 0
     @editor.draw_content
 
+    text mouse_x.to_s, $app.width/2, $app.height-60
     text "this is a DEMO app", $app.width/2, $app.height-40
     text "write 'rect 20, 20, 200, 200' and drag the values...", $app.width/2, $app.height-20
 
@@ -76,8 +77,8 @@ class RubyDraw < Processing::App
 
   def mouse_pressed
     @pressed = [mouse_x, mouse_y]
-    @initial_arg_value = @watcher.get_param(mouse_x, mouse_y) #get the initial value from watcher
     @cursor.set_position(mouse_x, mouse_y)
+    @initial_param = @watcher.get_param(mouse_x, mouse_y) #get the initial value from watcher
     redraw
   end
 

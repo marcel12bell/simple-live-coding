@@ -20,14 +20,13 @@ class Watch
     y_position = @cursor.y_position
     string_object = @lines.positiontable(y_position)
     if (string_object.position[0]).include?($app.pressed[1])
-      string_object.update_argument(x,y) unless string_object == :undefined
+      string_object.update_param(x,y) unless string_object == :undefined
     end
   end
 
   def get_param(x,y)
     y_position = @cursor.y_position
     string_object = @lines.positiontable(y_position)
-    string_object.get_param_value(x,y_position) unless string_object == :undefined
+    string_object.get_param_values unless string_object == :undefined
   end
-
 end
